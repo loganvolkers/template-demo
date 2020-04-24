@@ -2,7 +2,7 @@
 
 # Template Demo
 
-This is a proof of concept for building templated dynamic components usings Stencil and `<template>` tags. It is inspired by React context and [Stencil Context](https://github.com/petermikitsh/stencil-context).
+This is a proof of concept for building templated dynamic components using Stencil and `<template>` tags. It is inspired by React context and [Stencil Context](https://github.com/petermikitsh/stencil-context).
 
 
 ## HTML all the way down
@@ -19,6 +19,13 @@ Why use templates based on valid HTML?
  - Everyone already knows HTML
  - Simple toolchain
     - Just Stencil.js, can be rendered anywhere. No need for multiple layers. No need for pre-compilation.
+
+## Why `<template>` tags?
+
+ - Part of the HTML specification
+ - `<slot>` tags don't work when you need a component rendered multiple times.
+ - [Good browser support](https://caniuse.com/#feat=template)
+ - [Supported Polyfills](https://github.com/webcomponents/polyfills/tree/master/packages/template)
 
 
 ## Getting Started
