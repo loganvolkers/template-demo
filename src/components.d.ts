@@ -8,13 +8,6 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MyComponent {
     }
-    interface MyRewards {
-        "data": any;
-        /**
-          * The first name
-         */
-        "jsonata": string;
-    }
     interface MyVariable {
         "data": any;
         /**
@@ -33,12 +26,6 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
-    interface HTMLMyRewardsElement extends Components.MyRewards, HTMLStencilElement {
-    }
-    var HTMLMyRewardsElement: {
-        prototype: HTMLMyRewardsElement;
-        new (): HTMLMyRewardsElement;
-    };
     interface HTMLMyVariableElement extends Components.MyVariable, HTMLStencilElement {
     }
     var HTMLMyVariableElement: {
@@ -53,21 +40,12 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
-        "my-rewards": HTMLMyRewardsElement;
         "my-variable": HTMLMyVariableElement;
         "sqh-provider": HTMLSqhProviderElement;
     }
 }
 declare namespace LocalJSX {
     interface MyComponent {
-    }
-    interface MyRewards {
-        "data"?: any;
-        /**
-          * The first name
-         */
-        "jsonata"?: string;
-        "onSq-stencil:mountConsumer"?: (event: CustomEvent<any>) => void;
     }
     interface MyVariable {
         "data"?: any;
@@ -83,7 +61,6 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
-        "my-rewards": MyRewards;
         "my-variable": MyVariable;
         "sqh-provider": SqhProvider;
     }
@@ -93,7 +70,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "my-rewards": LocalJSX.MyRewards & JSXBase.HTMLAttributes<HTMLMyRewardsElement>;
             "my-variable": LocalJSX.MyVariable & JSXBase.HTMLAttributes<HTMLMyVariableElement>;
             "sqh-provider": LocalJSX.SqhProvider & JSXBase.HTMLAttributes<HTMLSqhProviderElement>;
         }
